@@ -1,0 +1,50 @@
+# file: .bashrc
+
+### Path setting
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+
+### Shell options
+
+# History
+shopt -s histappend
+shopt -s cmdhist
+set -o histexpand
+#shopt -s checkwinsize
+
+HISTTIMEFORMAT='%F %T '
+HISTFILESIZE=1000000
+HISTSIZE=1000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:bg:fg:history'
+
+# Store history immediately
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# Disable suspend by C-s
+stty -ixon
+
+# Recursive globbing, (eg. `cat **/*.txt`)
+shopt -s globstar 2> /dev/null;
+
+### Auto-completion
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+	source "$(brew --prefix)/etc/bash_completion"
+elif [ -f /etc/bash_completion ]; then
+	source /etc/bash_completion
+fi
+
+source .dotfiles/bash/common.sh
+
+# COLOR_YELLOW="\[\033[0;33m\]"
+# COLOR_GREEN="\[\033[0;32m\]"
+COLOR_BOLD_CYAN="\[\033[1;36m\]"
+COLOR_RESET="\[\033[0m\]"
+
+# user="${COLOR_YELLOW}\u${COLOR_RESET}"
+user="\u"
+# host="${COLOR_GREEN}\h${COLOR_RESET}"
+host="\h"
+# path="${COLOR_BOLD_CYAN}\w${COLOR_RESET}"
+path="\w"
+
+export PS1="\n${user}@${host}:${path}\$ "
