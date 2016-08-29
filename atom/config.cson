@@ -1,0 +1,38 @@
+"*":
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    defaultProvider: "Fuzzy"
+  autosave:
+    enabled: true
+  core:
+    disabledPackages: [
+      "keybinding-resolver"
+    ]
+    projectHome: "/Users/foxmk/Development"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    fontSize: 12
+    preferredLineLength: 120
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "c57a57fe-5560-212d-dcd4-d1e3ebd5f39e"
+  gofmt:
+    formatTool: "goreturns"
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "one-light-ui":
+    layoutMode: "Compact"
+  tabs:
+    enableVcsColoring: true
+  "tree-view":
+    autoReveal: true
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
