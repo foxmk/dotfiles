@@ -6,16 +6,11 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
-    # Bash
-    ~/.bashrc: bash/bashrc
+    ~/.atom: atom/
     ~/.bash_profile: bash/bash_profile
-    # Git
+    ~/.bashrc: bash/bashrc
+    ~/.dotfiles: ''
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
-    # Vim
     ~/.vimrc: vim/vimrc
-    # Atom
-    ~/.atom: atom/
-    # ZSH
     ~/.zshrc: zsh/zshrc
