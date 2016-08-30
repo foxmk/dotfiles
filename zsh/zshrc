@@ -9,20 +9,16 @@ ZSH_THEME="foxmk"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
-  git
-  git-extras
   virtualenv
-  aws
+  colored-man-pages
+  pip
   docker
   common-aliases
+
+  aws
   # gpg-agent
-  httpie
   npm
-  pip
   vagrant
-  colored-man-pages
-  colorize
-  extract
   golang
   # autoenv
   wd)
