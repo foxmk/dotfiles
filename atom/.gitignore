@@ -1,10 +1,10 @@
+.apm
+.node-gyp
 blob-store
 compile-cache
 dev
-storage
-packages
 git-time-machine
+packages
 recovery
 split-diff
-.node-gyp
-.apm
+storage
