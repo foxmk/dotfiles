@@ -1,39 +1,58 @@
 #!/usr/bin/env bash
 
+# Ask for the administrator password
+sudo -v
+
+# Check for Homebrew and install it if missing
+if test ! $(which brew)
+then
+  echo "Installing Homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 # Make sure we’re using the latest Homebrew.
 brew update
 brew upgrade --all
 
 # Install programs
-brew install autoenv
-brew install bash
-brew install git
-brew install git-flow
-brew install go
-brew install httpie
-brew install node
-brew install nvm
-brew install pass
-brew install python
-brew install python3
-brew install ssh-copy-id
-brew install sqlite
-brew install zsh
+brews=(
+    autoenv
+    bash
+    git
+    git-flow
+    git-extras
+    go
+    httpie
+    node
+    nvm
+    pass
+    python
+    python3
+    ssh-copy-id
+    sqlite
+    zsh
+)
 
-brew cask install atom
-brew cask install docker
-brew cask install dropbox
-brew cask install google-chrome
-brew cask install gpgtools
-brew cask install hyperswitch
-# brew cask install intellij-idea
-brew cask install iterm2
-brew cask install java
-brew cask install skype
-brew cask install sourcetree
-brew cask install telegram
-brew cask install vagrant
-brew cask install virtualbox
+casks=(
+    atom
+    docker
+    # dropbox
+    google-chrome
+    gpgtools
+    hyperswitch
+    # intellij-idea
+    iterm2
+    java
+    skype
+    sourcetree
+    telegram
+    vagrant
+    virtualbox
+    flux
+)
 
-# Remove outdated versions from the cellar.
+brew install "${brews[@]}"
+brew cask install "${casks[@]}"
+
+# Remove outdated versions from the cellar
 brew cleanup

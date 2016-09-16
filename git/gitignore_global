@@ -1,6 +1,24 @@
-*~
+# Folder view configuration files
 .DS_Store
+Desktop.ini
 
-# Idea projects
-.idea/
+# Thumbnail cache files
+._*
+*~
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+*.pyc
+
+# npm & bower
+bower_components
+node_modules
+npm-debug.log
+
+# JetBrains project files
+.idea
 *.iml

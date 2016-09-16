@@ -33,7 +33,7 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion
 fi
 
-source .dotfiles/bash/common.sh
+source $HOME/.environment
 
 # COLOR_YELLOW="\[\033[0;33m\]"
 # COLOR_GREEN="\[\033[0;32m\]"

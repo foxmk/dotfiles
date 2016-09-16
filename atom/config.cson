@@ -32,7 +32,6 @@
   tabs:
     enableVcsColoring: true
   "tree-view":
-    autoReveal: true
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
