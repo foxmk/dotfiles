@@ -1,10 +1,17 @@
 "*":
+  "atom-beautify":
+    general:
+      analytics: false
+    go:
+      beautify_on_save: true
+    js:
+      beautify_on_save: true
   "autocomplete-plus":
-    confirmCompletion: "tab always, enter when suggestion explicitly selected"
     defaultProvider: "Fuzzy"
   autosave:
     enabled: true
   core:
+    closeEmptyWindows: false
     disabledPackages: [
       "keybinding-resolver"
     ]
@@ -15,22 +22,29 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontSize: 12
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-    tabLength: 4
   "exception-reporting":
-    userId: "c57a57fe-5560-212d-dcd4-d1e3ebd5f39e"
+    userId: "d49972ef-1372-17f3-ede9-70d17a044ecf"
   gofmt:
     formatTool: "goreturns"
+  "linter-eslint":
+    useGlobalEslint: true
   "one-dark-ui":
     layoutMode: "Compact"
   "one-light-ui":
     layoutMode: "Compact"
+  "project-manager":
+    includeGitRepositories: true
+    sortBy: "group"
   tabs:
     enableVcsColoring: true
+  "tool-bar":
+    iconSize: "12px"
+    position: "Left"
+    visible: false
   "tree-view":
     hideIgnoredNames: true
   welcome:
