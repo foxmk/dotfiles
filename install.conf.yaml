@@ -15,37 +15,3 @@
     ~/.vimrc: vim/vimrc
     ~/.zshrc: zsh/zshrc
     ~/.eslintrc: eslintrc
-
-- brew:
-    - autoenv
-    - bash
-    - git
-    - git-flow
-    - git-extras
-    - go
-    - httpie
-    - node
-    - nvm
-    - pass
-    - python
-    - python3
-    - ssh-copy-id
-    - sqlite
-    - zsh
-
-- cask:
-    - atom
-    - docker
-    # - dropbox
-    - google-chrome
-    - gpgtools
-    - hyperswitch
-    # - intellij-idea
-    - iterm2
-    - java
-    - skype
-    - sourcetree
-    - telegram
-    - vagrant
-    - virtualbox
-    - flux
