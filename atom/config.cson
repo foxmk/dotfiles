@@ -6,28 +6,57 @@
       beautify_on_save: true
     js:
       beautify_on_save: true
+  "atom-material-ui":
+    colors:
+      accentColor: "#af0010"
+      genAccent: true
+      paintCursor: true
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    treeView:
+      compactList: true
   "autocomplete-plus":
     defaultProvider: "Fuzzy"
+  "autocomplete-python":
+    useKite: false
   autosave:
     enabled: true
   core:
     closeEmptyWindows: false
     disabledPackages: [
       "keybinding-resolver"
+      "atom-terminal"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".pioenvs"
+      ".piolibdeps"
+      ".clang_complete"
+      ".gcc-flags.json"
     ]
     projectHome: "/Users/foxmk/Development"
-    themes: [
-      "one-dark-ui"
-      "solarized-dark-syntax"
-    ]
+    telemetryConsent: "limited"
   editor:
     backUpBeforeSaving: true
+    fontSize: 12
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
-    showInvisibles: true
   "exception-reporting":
     userId: "d49972ef-1372-17f3-ede9-70d17a044ecf"
+  "git-plus":
+    general:
+      _analyticsUserId: "e235abf7-a1cb-483c-ab57-e6e98b750186"
+  "go-config":
+    gopath: "/Users/foxmk/Development/go;/Users/foxmk/Development/go-contrib;"
   gofmt:
     formatTool: "goreturns"
   "linter-eslint":
@@ -36,6 +65,11 @@
     layoutMode: "Compact"
   "one-light-ui":
     layoutMode: "Compact"
+  "platformio-ide":
+    showHomeScreen: false
+  "platformio-ide-terminal":
+    core:
+      autoRunCommand: "export PATH=/Volumes/Storage/Development/dotfiles/atom/packages/platformio-ide/penv/bin:/Users/foxmk/development/gopath/bin:/Users/foxmk/development/go-contrib/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/bin:/usr/local/sbin"
   "project-manager":
     includeGitRepositories: true
     sortBy: "group"
