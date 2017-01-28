@@ -1,1 +1,52 @@
+'atom-text-editor':
+  'alt-up': 'expand-region:expand'
+  'alt-down': 'expand-region:shrink'
 
+'body':
+  'alt-tab': 'window:focus-next-pane'
+  'alt-shift-tab': 'window:focus-previous-pane'
+
+'.platform-darwin atom-workspace':
+  'cmd-e': 'fuzzy-finder:toggle-buffer-finder'
+  'cmd-p': 'command-palette:toggle'
+
+  'cmd-shift-f': 'project-find:show'
+  'cmd-shift-r': 'project-find:show'
+
+  'cmd-shift-a': 'command-palette:toggle'
+  'cmd-1': 'tree-view:toggle'
+
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
+  'cmd-d': 'editor:duplicate-lines'
+  'alt-up': 'editor:select-to-next-subword-boundary'
+  'alt-down': 'editor:select-to-previous-subword-boundary'
+
+  'cmd-backspace': 'editor:delete-line'
+
+  'cmd-shift-up': 'editor:move-line-up'
+  'cmd-shift-down': 'editor:move-line-down'
+
+  'cmd-alt-l': 'atom-beautify:beautify-editor'
+
+  'cmd-r': 'find-and-replace:show'
+  'ctrl-g': 'find-and-replace:select-next'
+  'ctrl-shift-g': 'find-and-replace:select-undo'
+
+
+  'cmd-l': 'go-to-line:toggle'
+  'cmd-ctrl-s': 'tree-view:reveal-active-file'
+
+  # 'cmd-f3': 'bookmarks:view-all'
+  # 'f3': 'bookmarks:toggle-bookmark'
+
+  'cmd-j': 'snippets:available'
+
+'.platform-darwin .tree-view':
+  'cmd-n': 'tree-view:add-file'
+  'cmd-1': 'tree-view:toggle'
+
+  # Editing #
+  'cmd-shift-c': 'tree-view:copy-full-path'
+  'cmd-r': 'tree-view:move'
+  'f6': 'tree-view:move'
+  'shift-f6': 'tree-view:move'
