@@ -6,9 +6,7 @@ function prompt_char {
 
 # Example prompt:
 # ~/development git:master venv:env % command...
-PROMPT='
-%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)$(virtualenv_prompt_info)
-%(!.#.$) '
+PROMPT='%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)$(virtualenv_prompt_info) %(!.#.$) '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" git:%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
