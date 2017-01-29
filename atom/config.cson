@@ -3,14 +3,14 @@
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "solarized-dark-syntax"
+      "nord-atom-syntax"
     ]
   editor:
     fontSize: 12
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
-    userId: "3e11abb4-ceeb-8048-39d5-63d74794ffbb"
+    userId: "c4728191-e97f-d783-b0b4-e2546414348f"
   "one-dark-ui":
     layoutMode: "Compact"
     tabSizing: "Minimum"
