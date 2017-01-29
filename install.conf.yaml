@@ -15,6 +15,7 @@
     ~/.vimrc: vim/vimrc
     ~/.zshrc: zsh/zshrc
     ~/.eslintrc: eslintrc
+    ~/.emacs.d: emacs.d
 
 - shell:
   - mkdir -p ~/.vim
