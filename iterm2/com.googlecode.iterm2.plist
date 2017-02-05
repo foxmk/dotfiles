@@ -244,9 +244,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 394 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>67 188 918 512 0 0 1440 877 </string>
+	<string>67 167 918 494 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>155 93 1060 552 0 0 1440 877 </string>
+	<string>155 72 1060 573 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 57</key>
 	<string>218 340 920 537 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 58</key>
@@ -544,7 +544,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>tmux attach -t iterm || tmux new -s iterm</string>
+			<string></string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -881,7 +881,7 @@
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
@@ -1121,7 +1121,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-29T16:03:22Z</date>
+	<date>2017-02-01T16:10:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

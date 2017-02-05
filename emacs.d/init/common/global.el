@@ -120,6 +120,6 @@
   (exec-path-from-shell-initialize))
 
 ;; Save frame size on exit
-; (require 'save-frame-size)
+(desktop-save-mode 1)
 
 (provide 'common/global)

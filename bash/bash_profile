@@ -13,3 +13,5 @@ fi
 if [ -f /Users/foxmk/Downloads/google-cloud-sdk/completion.bash.inc ]; then
   source '/Users/foxmk/Downloads/google-cloud-sdk/completion.bash.inc'
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

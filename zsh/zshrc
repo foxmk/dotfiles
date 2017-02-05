@@ -8,8 +8,6 @@ export ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
 ZSH_THEME="foxmk"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-
-
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 
@@ -20,13 +18,14 @@ plugins=(
   docker
   common-aliases
 
-  aws
+  # aws
   # gpg-agent
   npm
   vagrant
   golang
   # autoenv
-  wd)
+  wd
+)
 
 source $ZSH/oh-my-zsh.sh
 

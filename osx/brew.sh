@@ -16,43 +16,28 @@ brew upgrade --all
 
 # Install programs
 brews=(
+    ack
     autoenv
     bash
+    cookiecutter
     git
-    git-flow
-    git-extras
-    go
+    gradle
+    htop
     httpie
-    node
-    nvm
-    pass
+    jq
+    protobuf
     python
     python3
-    ssh-copy-id
+    sbt
     sqlite
+    ssh-copy-id
+    the_silver_searcher
+    tmux
     zsh
 )
 
-casks=(
-    atom
-    docker
-    # dropbox
-    google-chrome
-    gpgtools
-    hyperswitch
-    # intellij-idea
-    iterm2
-    java
-    skype
-    sourcetree
-    telegram
-    vagrant
-    virtualbox
-    flux
-)
-
 brew install "${brews[@]}"
-brew cask install "${casks[@]}"
+# brew cask install "${casks[@]}"
 
 # Remove outdated versions from the cellar
 brew cleanup
