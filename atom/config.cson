@@ -3,7 +3,7 @@
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "nord-atom-syntax"
+      "solarized-dark-syntax"
     ]
   editor:
     fontSize: 12
