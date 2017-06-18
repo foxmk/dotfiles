@@ -51,3 +51,6 @@ fi
 export CONSCRIPT_HOME="$HOME/.conscript"
 export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
 export PATH=$CONSCRIPT_HOME/bin:$PATH
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

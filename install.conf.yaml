@@ -6,16 +6,21 @@
 - clean: ['~']
 
 - link:
+    ~/.dotfiles: ''
     ~/.atom: atom/
+    ~/.emacs.d: emacs.d
+    ~/.vimrc: vim/vimrc
+
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
-    ~/.dotfiles: ''
+    ~/.zshrc: zsh/zshrc
+
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
-    ~/.vimrc: vim/vimrc
-    ~/.zshrc: zsh/zshrc
+
     ~/.eslintrc: eslintrc
-    ~/.emacs.d: emacs.d
+
 
 - shell:
   - mkdir -p ~/.vim
+  - [git submodule update --init --recursive, Installing submodules]

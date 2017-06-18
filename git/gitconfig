@@ -4,9 +4,26 @@
 [alias]
         ci = commit -a
         am = commit -a --amend
-        st = status -s
-        ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+        ammend = commit --amend
         co = checkout
+
+        st = status -s
+
+        ls = log --oneline --decorate 
+        graph = log --color --graph --branches --remotes --tags --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+        branches = branch -a
+        tags = tag
+        stashes = stash list
+        remotes = remote -v
+
+        unmerged = diff --name-only --diff-filter=U
+
+        unstage = reset -q HEAD --
+        discard = checkout --
+        uncommit = reset --mixed HEAD~
+
+        precommit = diff --cached --diff-algorithm=minimal -w
 
 [push]
         default = matching

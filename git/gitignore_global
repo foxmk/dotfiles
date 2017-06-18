@@ -22,3 +22,6 @@ npm-debug.log
 # JetBrains project files
 .idea
 *.iml
+
+# Misc
+.java_version
