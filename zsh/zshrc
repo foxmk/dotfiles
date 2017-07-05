@@ -1,5 +1,5 @@
 ### Path setting
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
@@ -12,18 +12,19 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 
 plugins=(
+  zsh-autosuggestions
   virtualenv
   colored-man-pages
   pip
   docker
   common-aliases
-
+  pass 
   # aws
-  # gpg-agent
+  gpg-agent
   npm
   vagrant
   golang
-  # autoenv
+  autoenv
   wd
 )
 
@@ -51,3 +52,9 @@ fi
 export CONSCRIPT_HOME="$HOME/.conscript"
 export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
 export PATH=$CONSCRIPT_HOME/bin:$PATH
+source /usr/local/opt/autoenv/activate.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
