@@ -11,7 +11,6 @@
     showInvisibles: true
   "exception-reporting":
     userId: "c4728191-e97f-d783-b0b4-e2546414348f"
-  "one-dark-ui":
-    layoutMode: "Compact"
+  "one-dark-ui": {}
   welcome:
     showOnStartup: false

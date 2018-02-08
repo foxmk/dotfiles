@@ -58,3 +58,8 @@ source /usr/local/opt/autoenv/activate.sh
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
+export PATH=$PATH:~/Development/cbt
+export PAGER="less -S"
+
+source ~/Development/cbt/shell-integration/cbt-completions.zsh
