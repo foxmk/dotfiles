@@ -18,7 +18,7 @@ plugins=(
   pip
   docker
   common-aliases
-  pass 
+  pass
   # aws
   gpg-agent
   npm
@@ -62,4 +62,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:~/Development/cbt
 export PAGER="less -S"
 
-source ~/Development/cbt/shell-integration/cbt-completions.zsh
+# source ~/Development/cbt/shell-integration/cbt-completions.zsh
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

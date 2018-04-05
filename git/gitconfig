@@ -9,7 +9,7 @@
 
         st = status -s
 
-        ls = log --oneline --decorate 
+        ls = log --oneline --decorate
         graph = log --color --graph --branches --remotes --tags --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
         branches = branch -a
@@ -28,11 +28,11 @@
 [push]
         default = matching
 
-[core]
-        excludesfile = ~/.gitignore_global
+[fetch]
+        prune = true
+
+[url "git@github.com:"]
+    insteadOf = "https://github.com/"
 
 [include]
         path = ~/.gitconfig_local
-
-[fetch]
-        prune = true

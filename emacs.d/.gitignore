@@ -1,7 +1,0 @@
-.DS_Store
-.cask/
-.session
-.emacs.desktop
-*.dat
-auto-save-list
-custom.el

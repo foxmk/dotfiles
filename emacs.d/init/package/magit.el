@@ -1,6 +1,0 @@
-;;; package/magit.el -- magit settings
-
-(progn
-  (setq magit-last-seen-setup-instructions "1.4.0"))
-
-(provide 'package/magit)

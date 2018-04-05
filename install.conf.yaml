@@ -5,10 +5,16 @@
 
 - clean: ['~']
 
+- shell:
+  - mkdir -p ~/Development ~/.vim
+  - touch ~/.gitconfig_local
+  - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    ~/.oh-my-zsh: oh-my-zsh
+
 - link:
     ~/.dotfiles: ''
-    ~/.atom: atom/
-    ~/.emacs.d: emacs.d
     ~/.vimrc: vim/vimrc
 
     ~/.bash_profile: bash/bash_profile
@@ -19,8 +25,3 @@
     ~/.gitignore_global: git/gitignore_global
 
     ~/.eslintrc: eslintrc
-
-
-- shell:
-  - mkdir -p ~/.vim
-  - [git submodule update --init --recursive, Installing submodules]
