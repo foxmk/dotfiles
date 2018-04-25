@@ -65,3 +65,8 @@ export PAGER="less -S"
 # source ~/Development/cbt/shell-integration/cbt-completions.zsh
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# Load the custom .*-pass I have
+for i in ~/.*-pass; do
+[ -e $i/.load.zsh ] && . $i/.load.zsh
+done
