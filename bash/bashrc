@@ -50,3 +50,5 @@ path="\w"
 export PS1="\n${user}@${host}:${path}\$ "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+complete -C /usr/local/bin/vault vault

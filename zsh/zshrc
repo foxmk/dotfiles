@@ -70,3 +70,6 @@ eval "$(jenv init -)"
 for i in ~/.*-pass; do
 [ -e $i/.load.zsh ] && . $i/.load.zsh
 done
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault

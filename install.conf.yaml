@@ -25,3 +25,4 @@
     ~/.gitignore_global: git/gitignore_global
 
     ~/.eslintrc: eslintrc
+    ~/.emacs.d: emacs.d

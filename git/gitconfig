@@ -31,8 +31,18 @@
 [fetch]
         prune = true
 
-[url "git@github.com:"]
-    insteadOf = "https://github.com/"
-
 [include]
         path = ~/.gitconfig_local
+[core]
+	excludesfile = /Users/aao0772/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Artem Artemyev
+	email = artem.artemyev@springernature.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
