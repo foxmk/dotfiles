@@ -74,6 +74,9 @@
 
 (setq mac-command-modifier 'super)
 
+;;; Common keys
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;;; Evil-mode
 (use-package evil
   :config
@@ -84,7 +87,9 @@
 (use-package counsel
   :demand
   :bind
-  (("C-s" . swiper))
+  (("C-s" . swiper)
+   ("C-x b" . counsel-ibuffer)
+   ("C-x m" . counsel-M-x))
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t
