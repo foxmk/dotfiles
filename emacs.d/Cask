@@ -13,6 +13,7 @@
 (depends-on "edbi")
 (depends-on "edbi-minor-mode")
 (depends-on "evil")
+(depends-on "evil-escape")
 (depends-on "evil-leader")
 (depends-on "evil-magit")
 (depends-on "evil-nerd-commenter")
@@ -39,4 +40,5 @@
 (depends-on "smartparens")
 (depends-on "swiper")
 (depends-on "use-package")
+(depends-on "which-key")
 (depends-on "zenburn-theme")

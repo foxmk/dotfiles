@@ -81,7 +81,28 @@
 (use-package evil
   :config
   (evil-mode t)
-  (use-package evil-magit :requires magit))
+  (use-package evil-magit :requires magit)
+  (use-package evil-escape
+    :init
+    (setq-default evil-escape-key-sequence "jk")
+    :config
+    (evil-escape-mode)))
+
+(use-package evil-leader
+  :requires evil
+  :init
+  (setq evil-leader/leader "<SPC>")
+  :config
+  (global-evil-leader-mode))
+
+;;; Which-key
+(use-package which-key
+  :init
+  (setq which-key-popup-type 'minibuffer
+	which-key-idle-delay 0.6)
+  :config
+  (which-key-setup-minibuffer)
+  (which-key-mode))
 
 ;;; Ivy/Counsel/Swiper
 (use-package counsel

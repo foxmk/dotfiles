@@ -1,5 +1,5 @@
 [color]
-        ui = always
+        ui = auto
 
 [alias]
         ci = commit -a
