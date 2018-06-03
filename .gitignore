@@ -3,3 +3,11 @@
 
 # Emacs package files
 .cask
+/.DS_Store
+/emacs.d/#Cask#
+/emacs.d/.DS_Store
+/emacs.d/custom.el
+/emacs.d/elpa/
+*.eld
+/emacs.d/recentf
+/emacs.d/smex-items
