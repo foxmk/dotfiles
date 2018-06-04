@@ -73,7 +73,7 @@
   :diminish
   :init
   (setq which-key-popup-type 'minibuffer
-        which-key-idle-delay 0.3)
+        which-key-idle-delay 0.4)
   :config
   (which-key-setup-minibuffer)
   (which-key-mode))
@@ -98,9 +98,9 @@
   (general-evil-setup t)
   (general-setq evil-want-Y-yank-to-eol t
                 evil-search-module 'evil-search)
+  (general-auto-unbind-keys)
   (general-create-definer my-leader-define-key
     :prefix "SPC"
-    :keymaps 'override
     :states '(normal motion emacs)))
 
 (use-package smartparens
