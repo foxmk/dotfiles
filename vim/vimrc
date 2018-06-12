@@ -1,25 +1,48 @@
 " Make vim more useful
 set nocompatible
 
-" Mapleader
-let mapleader=","
+" Plug
+call plug#begin('~/.vim/plugged')
 
-" Toggle show tabs and trailing spaces (,c)
-set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
-set fcs=fold:-
-nnoremap <silent> <leader>c :set nolist!<CR>
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'vim-scripts/xoria256.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
+Plug 'neomake/neomake', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
+call plug#end()
+
+" Leader
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " UI
-set guifont=SF\ Mono:h12
 set background=dark
-set nu " Enable line numbers
+set number
+set relativenumber
 set lazyredraw " Don't redraw when we don't have to
 set title " Show the filename in the window titlebar
 set ttyfast " Send more characters at a given time
+set ttimeout
+set ttimeoutlen=100
 set laststatus=2 " Always show status line
 set ruler " Show the cursor position
 set noerrorbells " Disable error bells
 syntax on
+set display+=lastline
+colors xoria256
 
 " Search
 set hlsearch " Highlight searches
@@ -27,15 +50,19 @@ set ignorecase " Ignore case of searches
 set incsearch " Highlight dynamically as pattern is typed
 set wrapscan " Searches wrap around end of file
 
-" Common options
+" Common settings
+set scrolloff=1
+set sessionoptions-=options
+set autoread
+set formatoptions+=j " Delete comment character when joining commented lines
 set autoindent " Copy indent from last line when starting new line
 set backspace=indent,eol,start
 set diffopt=filler " Add vertical spaces to keep right and left aligned
+set complete-=i
 set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set expandtab " Expand tabs to spaces
 set hidden " When a buffer is brought to foreground, remember undo history and marks
-
 set magic " Enable extended regexes
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command
 set shiftwidth=2 " The # of spaces for indenting
@@ -47,13 +74,47 @@ set switchbuf=""
 set undofile " Persistent Undo
 set viminfo=%,'9999,s512,n~/.vim/viminfo " Restore buffer list, marks are remembered for 9999 files, registers up to 512Kb are remembered
 
+" Wildmenu
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
 set wildignore+=.DS_Store
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj
 set wildignore+=*/bower_components/*,*/node_modules/*
 set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*,*/source_maps/*,*/dist/*
 set wildmenu " Hitting TAB in command mode will show possible completions above command line
 set wildmode=list:longest " Complete only until point of ambiguity
 
+" Toggle show tabs and trailing spaces (,c)
+set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
+set fcs=fold:-
+nnoremap <silent> <leader>c :set nolist!<CR>
+
 " Yank from cursor to end of line
 nnoremap Y y$
+
+" Completions
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
+
+" Neomake
+" Gross hack to stop Neomake running when exitting because it creates a zombie cargo check process
+" which holds the lock and never exits. But then, if you only have QuitPre, closing one pane will
+" disable neomake, so BufEnter reenables when you enter another buffer.
+let s:quitting = 0
+au QuitPre *.rs let s:quitting = 1
+au BufEnter *.rs let s:quitting = 0
+au BufWritePost *.rs if ! s:quitting | Neomake | else | echom "Neomake disabled"| endif
+let g:neomake_warning_sign = {'text': '?'}
+
+" Rust
+let g:rustfmt_autosave = 1
+
+set hidden
+let g:racer_cmd = "/Users/foxmk/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+let g:deoplete#sources#rust#racer_binary='/Users/foxmk/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path= '/Users/foxmk/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'

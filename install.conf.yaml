@@ -26,3 +26,5 @@
 
     ~/.eslintrc: eslintrc
     ~/.emacs.d: emacs.d
+
+    ~/.ctags: ctags
