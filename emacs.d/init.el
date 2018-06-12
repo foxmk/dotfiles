@@ -27,9 +27,9 @@
   "Find Homebrew prefix."
   (substring (shell-command-to-string "brew --prefix") 0 -1))
 
-(defvar brew-prefix (find-brew-prefix))
-
-(setenv "SHELL" (concat brew-prefix "/bin/zsh"))
+(progn
+  (defvar brew-prefix (find-brew-prefix))
+  (setenv "SHELL" (concat brew-prefix "/bin/zsh")))
 
 (progn
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -40,18 +40,20 @@
   (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
   (when (fboundp 'horizontal-scroll-bar-mode) (horizontal-scroll-bar-mode -1)))
 
-(show-paren-mode 1)
-
-(setq visible-bell nil
-      ring-bell-function #'ignore
-      mac-command-modifier 'super
-      save-interprogram-paste-before-kill t
-      apropos-do-all t
-      require-final-newline t
-      load-prefer-newer t
-      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
-
-(set-frame-font "SF Mono")
+(progn
+  (show-paren-mode 1)
+  (setq mac-command-modifier 'super
+        save-interprogram-paste-before-kill t
+        require-final-newline t
+        load-prefer-newer t
+        backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
+  (setq visible-bell nil
+        ring-bell-function 'ignore)
+  (setq initial-scratch-message "")
+  (setf inhibit-splash-screen t)
+  (global-hl-line-mode 1)
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (set-frame-font "SF Mono"))
 
 (use-package diminish :defer t)
 
@@ -81,6 +83,23 @@
 (use-package evil
   :config
   (evil-mode t))
+
+(use-package evil-nerd-commenter
+  :after evil
+  :config
+  (evilnc-default-hotkeys))
+
+(use-package evil-surround
+  :after evil
+  :config
+  (global-evil-surround-mode 1))
+
+(use-package evil-visualstar
+  :after evil
+  :init
+  (setq evil-visualstar/persistent nil)
+  :config
+  (global-evil-visualstar-mode))
 
 (use-package evil-escape
   :after evil
