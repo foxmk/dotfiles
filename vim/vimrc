@@ -6,22 +6,24 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'chrisbra/NrrwRgn'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rsi'
-Plug 'maximbaz/lightline-ale'
-Plug 'w0rp/ale'
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'wikitopian/hardmode'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'chrisbra/NrrwRgn'
-
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
+Plug 'vim-scripts/xoria256.vim'
 
 call plug#end()
 
@@ -31,9 +33,9 @@ nnoremap <space> <nop>
 
 " UI
 syntax on
-colorscheme PaperColor
+colorscheme xoria256
 
-let g:lightline = { 'colorscheme': 'PaperColor' }
+let g:lightline = {}
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
       \  'linter_warnings': 'lightline#ale#warnings',
