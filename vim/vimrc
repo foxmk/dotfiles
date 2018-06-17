@@ -7,10 +7,12 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
-Plug 'w0rp/ale'
-
+Plug 'ajh17/Spacegray.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'chrisbra/NrrwRgn'
 Plug 'jiangmiao/auto-pairs'
@@ -19,19 +21,19 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
 
 Plug 'Shougo/deoplete.nvim'
+Plug 'maralla/completor.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+
+Plug 'w0rp/ale'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-
-Plug 'ajh17/Spacegray.vim'
 
 call plug#end()
 
@@ -79,30 +81,8 @@ let g:lightline.active = {
 
 " Search
 set hlsearch
-set ignorecase
-set smartcase
 set incsearch
 set wrapscan
-
-" Common settings
-set title
-set ruler
-set noerrorbells
-set scrolloff=1
-set autoread
-set formatoptions+=j " Delete comment character when joining commented lines
-set autoindent " Copy indent from last line when starting new line
-set backspace=indent,eol,start
-set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
-set encoding=utf-8 nobomb " BOM often causes trouble
-set expandtab " Expand tabs to spaces
-set hidden " When a buffer is brought to foreground, remember undo history and marks
-set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command
-set shiftwidth=2 " The # of spaces for indenting
-set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
-set softtabstop=2 " Tab key results in 2 spaces
-set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
-set undofile " Persistent Undo
 
 " Wildmenu
 set wildmenu
@@ -129,23 +109,24 @@ let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
 let g:ale_lint_on_text_changed = 'never'
 
-" Fixing
-let g:ale_fix_on_save = 1
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
-
-" Completions
-let g:deoplete#enable_at_startup = 1
-
-if has('path_extra')
-  setglobal tags-=./tags tags-=./tags; tags^=./tags;
-endif
-
-" Rust
-let g:ale_linters = {'rust': ['cargo']}
-let g:rustfmt_autosave = 1
-
-let g:racer_cmd = "/Users/foxmk/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
-let g:deoplete#sources#rust#racer_binary='/Users/foxmk/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path= '/Users/foxmk/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+" Common settings
+set title
+set ruler
+set noerrorbells
+set scrolloff=1
+set autoread
+set ignorecase
+set smartcase
+set formatoptions+=j " Delete comment character when joining commented lines
+set autoindent " Copy indent from last line when starting new line
+set backspace=indent,eol,start
+set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
+set encoding=utf-8 nobomb " BOM often causes trouble
+set expandtab " Expand tabs to spaces
+set hidden " When a buffer is brought to foreground, remember undo history and marks
+set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command
+set shiftwidth=2 " The # of spaces for indenting
+set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
+set softtabstop=2 " Tab key results in 2 spaces
+set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
+set undofile " Persistent Undo
