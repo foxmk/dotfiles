@@ -14,9 +14,11 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
-" Plug 'mattn/emmet-vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'maralla/completor.vim'
+Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
+Plug 'romainl/vim-qf'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -25,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
@@ -36,7 +39,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 call plug#end()
 
-
+" Settings
 set background=dark
 colorscheme spacegray
 
@@ -76,9 +79,16 @@ nnoremap Y y$
 
 " FZF
 nnoremap <leader>pf :GFiles<CR>
-nnoremap <leader>ff :Files<CR>
+nnoremap <leader>e :Files<CR>
 nnoremap <leader>fs :w<CR>
 
 " Auto pairs
 let g:AutoPairsFlyMode = 1
 
+" Testing
+let test#strategy = "dispatch"
+nnoremap <leader>ta :TestSuite<cr>
+nnoremap <leader>tf :TestFile<cr>
+nnoremap <leader>tn :TestNearest<cr>
+nnoremap <leader>tt :TestLast<cr>
+nnoremap <leader>te :TestVisit<cr>
