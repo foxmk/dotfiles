@@ -9,84 +9,62 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'ajh17/Spacegray.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 
 Plug 'chrisbra/NrrwRgn'
+Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-repeat'
-
-Plug 'Shougo/deoplete.nvim'
+Plug 'justinmk/vim-sneak'
+" Plug 'mattn/emmet-vim'
 Plug 'maralla/completor.vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'mileszs/ack.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 
-Plug 'w0rp/ale'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
-
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 call plug#end()
 
-" Leader
-let mapleader=' '
-nnoremap <space> <nop>
-
-" UI
-syntax on
 
 set background=dark
 colorscheme spacegray
 
 set splitright
 set splitbelow
-
-" Line numbers
 set number
 set relativenumber
-
-" Status line
-set laststatus=2
 set noshowmode
-
-let g:lightline = {}
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
-let g:lightline.component_type = {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'left',
-      \ }
-let g:lightline.active = {
-      \ 'left': [ [ 'mode', 'paste' ],
-      \           [ 'readonly', 'filename', 'modified' ] ],
-      \ 'right': [ [ 'lineinfo' ],
-      \            [ 'percent' ],
-      \            [ 'fileformat', 'fileencoding', 'filetype' ],
-      \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ] }
-
-" Search
 set hlsearch
-set incsearch
+set ignorecase
+set smartcase
 set wrapscan
-
-" Wildmenu
-set wildmenu
 set wildignore+=.DS_Store
+
+set title
+set noerrorbells
+set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
+set expandtab " Expand tabs to spaces
+set hidden " When a buffer is brought to foreground, remember undo history and marks
+set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command
+set shiftwidth=2 " The # of spaces for indenting
+set softtabstop=2 " Tab key results in 2 spaces
+set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
+set undofile " Persistent Undo
+
+" Leader
+let mapleader=' '
+nnoremap <Space> <Nop>
 
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
@@ -104,29 +82,3 @@ nnoremap <leader>fs :w<CR>
 " Auto pairs
 let g:AutoPairsFlyMode = 1
 
-" Linting
-let g:ale_sign_error = '!'
-let g:ale_sign_warning = '?'
-let g:ale_lint_on_text_changed = 'never'
-
-" Common settings
-set title
-set ruler
-set noerrorbells
-set scrolloff=1
-set autoread
-set ignorecase
-set smartcase
-set formatoptions+=j " Delete comment character when joining commented lines
-set autoindent " Copy indent from last line when starting new line
-set backspace=indent,eol,start
-set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
-set encoding=utf-8 nobomb " BOM often causes trouble
-set expandtab " Expand tabs to spaces
-set hidden " When a buffer is brought to foreground, remember undo history and marks
-set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command
-set shiftwidth=2 " The # of spaces for indenting
-set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
-set softtabstop=2 " Tab key results in 2 spaces
-set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
-set undofile " Persistent Undo
