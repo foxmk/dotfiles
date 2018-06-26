@@ -1,23 +1,20 @@
-# Common
-autoload -U promptinit && promptinit
+settings_dir="$HOME/.dotfiles/zsh"
 
 autoload -U compinit
 compinit
 
-setopt autocd
 setopt extendedglob
 setopt NO_NOMATCH
 
+source $settings_dir/history.zsh
+source $settings_dir/completion.zsh
+source $settings_dir/prompt.zsh
+source $settings_dir/aliases.zsh
 
-
-### Path setting
+# Path setting
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
 
 ### Per-machine settings
 for file in ~/.{environment,extra}; do
