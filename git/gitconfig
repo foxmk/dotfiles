@@ -46,3 +46,8 @@
 	email = artem.artemyev@springernature.com
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[diff "daff-csv"]
+	command = daff diff --git
+[merge "daff-csv"]
+	name = daff tabular csv merge
+	driver = daff merge --output %A %O %A %B
