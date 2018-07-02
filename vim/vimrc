@@ -7,19 +7,18 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
-Plug 'ajh17/Spacegray.vim'
-Plug 'itchyny/lightline.vim'
+" Plug 'maralla/completor.vim'
 
 Plug 'chrisbra/NrrwRgn'
+Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'maralla/completor.vim'
-Plug 'mattn/emmet-vim'
-Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-startify'
 Plug 'romainl/vim-qf'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
@@ -31,39 +30,32 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'wellle/targets.vim'
+Plug 'wincent/ferret'
 
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 call plug#end()
 
 " Settings
+autocmd VimResized * wincmd =
 set background=dark
-colorscheme spacegray
+set synmaxcol=200
 
-set splitright
-set splitbelow
-set number
-set relativenumber
-set noshowmode
+set expandtab
+set hidden
 set hlsearch
-set ignorecase
-set smartcase
-set wrapscan
-set wildignore+=.DS_Store
-
-set title
+set infercase
 set noerrorbells
-set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
-set expandtab " Expand tabs to spaces
-set hidden " When a buffer is brought to foreground, remember undo history and marks
-set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command
-set shiftwidth=2 " The # of spaces for indenting
-set softtabstop=2 " Tab key results in 2 spaces
-set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
-set undofile " Persistent Undo
+set nojoinspaces
+set smartcase
+set splitbelow
+set splitright
+set title
+set undofile
+set visualbell
+set wrapscan
+set wildmenu
 
 " Leader
 let mapleader=' '
@@ -76,6 +68,10 @@ nnoremap <silent> <leader>c :set nolist!<CR>
 
 " Yank from cursor to end of line
 nnoremap Y y$
+
+" Change word under cursor and dot repeat
+nnoremap c* *Ncgn
+nnoremap c# #NcgN
 
 " FZF
 nnoremap <leader>pf :GFiles<CR>
