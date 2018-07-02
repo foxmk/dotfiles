@@ -13,6 +13,7 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhinz/vim-startify'
@@ -44,6 +45,9 @@ set synmaxcol=200
 
 set expandtab
 set hidden
+
+set splitright
+set splitbelow
 set hlsearch
 set infercase
 set noerrorbells

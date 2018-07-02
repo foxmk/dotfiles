@@ -1,0 +1,79 @@
+### Path setting
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.dotfiles/oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
+
+ZSH_THEME="foxmk"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+
+plugins=(
+  zsh-autosuggestions
+  virtualenv
+  colored-man-pages
+  pip
+  docker
+  common-aliases
+  pass
+  # aws
+  gpg-agent
+  npm
+  vagrant
+  golang
+  autoenv
+  wd
+)
+
+source $ZSH/oh-my-zsh.sh
+
+alias l="ls -ohFG"
+alias ll="ls -ohAFG"
+
+### Per-machine settings
+for file in ~/.{environment,extra}; do
+  if [ -f "$file" ]; then
+  	source "$file"
+  fi
+done
+unset file
+
+# Color output with grc
+if which grc > /dev/null; then
+  alias ping='grc --colour=auto ping'
+  alias traceroute='grc --colour=auto traceroute'
+  alias make='grc --colour=auto make'
+  alias diff='grc --colour=auto diff'
+fi
+
+export CONSCRIPT_HOME="$HOME/.conscript"
+export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
+export PATH=$CONSCRIPT_HOME/bin:$PATH
+source /usr/local/opt/autoenv/activate.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+export PATH=$PATH:~/Development/cbt
+export PAGER="less -S"
+
+# source ~/Development/cbt/shell-integration/cbt-completions.zsh
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# Load the custom .*-pass I have
+for i in ~/.*-pass; do
+[ -e $i/.load.zsh ] && . $i/.load.zsh
+done
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+eval $(thefuck --alias)
