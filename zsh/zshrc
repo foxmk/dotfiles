@@ -1,15 +1,25 @@
-settings_dir="$HOME/.dotfiles/zsh"
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-autoload -U compinit
-compinit
+zplug "zdharma/fast-syntax-highlighting"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
 
 setopt extendedglob
-setopt NO_NOMATCH
 
+settings_dir="$HOME/.dotfiles/zsh"
 source $settings_dir/history.zsh
 source $settings_dir/completion.zsh
 source $settings_dir/prompt.zsh
 source $settings_dir/aliases.zsh
+source $settings_dir/bindings.zsh
 
 # Path setting
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
